@@ -4,7 +4,16 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    tambos: [{ nombre: "Tambo n°1" }, { nombre: "Tambo n°2" }],
+    tamboElegido: "Elegir tambo"
+  },
+  mutations: {
+    cambiarTambo(state, index) {
+      /* buscar tambo con dicho nombre en el archivo (o donde sea que este guardado) */
+      var tambo = state.tambos[index].nombre;
+      state.tamboElegido = tambo;
+    }
+  },
   actions: {}
 });
