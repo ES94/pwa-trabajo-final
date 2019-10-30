@@ -11,7 +11,7 @@
               <b-dropdown-item-button
                 v-for="(tambo, index) of tambos"
                 :key="tambo.id"
-                @click="cambiarTambo(index)"
+                @click="elegirTambo(index)"
               >
                 <!-- hacer for en la lista de tambos de un archivo -->
                 {{tambo.nombre}}
@@ -47,7 +47,7 @@ export default {
     ...mapState(["tambos", "tamboElegido"])
   },
   methods: {
-    ...mapMutations(["cambiarTambo"])
+    ...mapMutations(["elegirTambo"])
   }
 };
 </script>

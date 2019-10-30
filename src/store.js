@@ -9,7 +9,7 @@ export default new Vuex.Store({
     tamboElegido: "Elegir tambo"
   },
   mutations: {
-    cambiarTambo(state, index) {
+    elegirTambo(state, index) {
       /* buscar tambo con dicho nombre en el archivo (o donde sea que este guardado) */
       var tambo = state.tambos[index].nombre;
       state.tamboElegido = tambo;
