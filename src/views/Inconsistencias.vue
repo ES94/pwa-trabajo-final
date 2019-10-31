@@ -1,5 +1,11 @@
 <template>
-    <div>
-        <h1>Inconsistencias</h1>
-    </div>
+  <div>
+    <b-container>
+      <b-row>
+        <b-col>
+          <h1>Inconsistencias</h1>
+        </b-col>
+      </b-row>
+    </b-container>
+  </div>
 </template>

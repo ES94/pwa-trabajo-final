@@ -1,5 +1,11 @@
 <template>
   <div>
-    <h1>Tacto</h1>
+    <b-container>
+      <b-row>
+        <b-col>
+          <h1>Tacto</h1>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>

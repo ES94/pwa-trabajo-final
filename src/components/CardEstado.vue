@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card border-variant="dark" header="Estado actual" class="mt-3">
+    <b-card border-variant="dark" header="Estado actual" class="mt-3 mb-3">
       <textoValor texto="Número de lactancia" valor="[valor]" />
       <textoValor texto="Fecha inicio lactancia" valor="[valor]" />
       <textoValor texto="Días al parto" valor="[valor]" />

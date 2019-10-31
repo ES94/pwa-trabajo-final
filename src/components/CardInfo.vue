@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card border-variant="dark" header="Información del animal" class="mt-3">
+    <b-card border-variant="dark" header="Información del animal" class="mt-3 mb-3">
       <textoValor texto="RP" valor="[valor]" />
       <b-img src="https://picsum.photos/1024/400/?image=41" fluid rounded />
       <textoValor texto="Nombre" valor="[valor]" />

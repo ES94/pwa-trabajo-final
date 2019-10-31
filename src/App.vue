@@ -22,7 +22,7 @@
             </b-dropdown>
             <b-nav-item to="/">Inicio</b-nav-item>
             <b-nav-item to="/animales">Animales</b-nav-item>
-            <b-nav-item to="/crias">Crias</b-nav-item>
+            <b-nav-item to="/crias">Crías</b-nav-item>
             <b-nav-item to="/produccion">Produccion</b-nav-item>
             <b-nav-item to="/reproduccion">Reproduccion</b-nav-item>
             <b-nav-item to="/tacto">Tacto</b-nav-item>
