@@ -15,7 +15,7 @@
             <b-container>
               <b-row align-h="center">
                 <b-col>
-                  <datePicker v-model="pickedDate" aria-placeholder="Elegir fecha" />
+                  <datePicker v-model="pickedDate" />
                 </b-col>
                 <b-col>
                   <b-dropdown right text="Elegir evento" variant="primary" class="m-2">
@@ -28,18 +28,20 @@
               <b-row align-h="center">
                 <b-col>
                   <b-button pill variant="outline-primary" v-b-modal.modal-agregarRp>Agregar RP</b-button>
-                  
+
                   <!-- Cuadro modal de lista de RPs -->
                   <!-- Descubrir como capturar y devolver info dentro del modal
-                  o sino hacer una lista de botones -->
-                  <b-modal id="modal-agregarRp" title="Agregar RP" ok-only>
+                  o sino hacer una lista de botones-->
+                  <b-modal id="modal-agregarRp" size="sm" scrollable title="Agregar RP" ok-only>
                     <b-form-group label="Lista de RP">
                       <b-form-radio-group name="radio-group-rp">
-                        <b-form-radio
-                          v-for="(rp, index) of listaRp"
-                          :key="rp.id"
-                          :value="index"
-                        >{{ rp.rp }}</b-form-radio>
+                        <b-container>
+                          <b-row v-for="(rp, index) of listaRp" :key="rp.id" :value="index">
+                            <b-col>
+                              <b-form-radio>{{ rp.rp }}</b-form-radio>
+                            </b-col>
+                          </b-row>
+                        </b-container>
                       </b-form-radio-group>
                     </b-form-group>
                   </b-modal>
@@ -121,7 +123,6 @@ export default {
   },
   data() {
     return {
-      pickedDate: new Date(),
       dato: ""
     };
   },

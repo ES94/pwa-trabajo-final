@@ -76,8 +76,7 @@ export default {
         { text: "Ordeñe 4", value: "fourth" }
       ],
       statusMuestra: "not_checked",
-      statusValorFijo: "not_checked",
-      pickedDate: new Date()
+      statusValorFijo: "not_checked"
     };
   }
 };

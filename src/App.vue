@@ -4,7 +4,7 @@
     <b-navbar toggleable="md" type="dark" variant="dark">
       <b-container>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-        <b-navbar-brand to="/">DIRSA</b-navbar-brand>
+        <b-navbar-brand to="/">AgroProgressive</b-navbar-brand>
         <b-collapse is-nav id="nav-collapse">
           <b-navbar-nav>
             <b-dropdown id="dropdown-tambo" :text="tamboElegido" right>
