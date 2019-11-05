@@ -10,10 +10,10 @@
 
       <!-- Contenido de la página -->
       <b-row>
-        <b-col >
+        <b-col col lg="4" md="4" sm="4">
           <cardEvLista />
         </b-col>
-        <b-col>
+        <b-col col lg="8" md="8" sm="8">
           <cardEvDet />
         </b-col>
       </b-row>
@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import cardEvLista from "@/components/CardEventoLista.vue"
-import cardEvDet from "@/components/CardEventoDetalle.vue"
+import cardEvLista from "@/components/CardEventoLista.vue";
+import cardEvDet from "@/components/CardEventoDetalle.vue";
 
 export default {
   name: "historial",
@@ -31,5 +31,5 @@ export default {
     cardEvLista,
     cardEvDet
   }
-}
+};
 </script>

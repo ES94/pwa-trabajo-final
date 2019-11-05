@@ -31,8 +31,10 @@
       <!-- Contenido de la página -->
       <b-row>
         <!-- Realizar bindeo de datos con la cardInfo y la cardEstado para mostrar datos -->
-        <b-col>
+        <b-col col lg="6" md="6" sm="6">
           <cardInfo />
+        </b-col>
+        <b-col col lg="6" md="6" sm="6">
           <cardEstado />
         </b-col>
       </b-row>
