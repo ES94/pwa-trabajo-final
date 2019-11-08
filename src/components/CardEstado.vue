@@ -16,22 +16,21 @@
       <textoValor texto="Lote anterior" valor="[valor]" />
       <textoValor texto="Mejor producción 305" valor="[valor]" />
       <textoValor texto="Mejor lact. prod. 305" valor="[valor]" />
-      <textoValor texto="Fecha de último peso" valor="[valor]" />
-      <textoValor texto="Último peso" valor="[valor]" />
       <textoValor texto="Fecha de calificación" valor="[valor]" />
-      <textoValor texto="Puntaje" valor="[valor]" />
-      <textoValor texto="Caravana Senasa" valor="[valor]" />
+      <estadoBasico />
     </b-card>
   </div>
 </template>
 
 <script>
 import textoValor from "@/components/TextoValor.vue";
+import estadoBasico from "@/components/EstadoBasico.vue";
 
 export default {
   name: "cardEstado",
   components: {
-    textoValor
+    textoValor,
+    estadoBasico
   }
 };
 </script>
