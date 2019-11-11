@@ -10,13 +10,18 @@
 
       <!-- Contenido de la página -->
       <b-row align-h="center" align-v="center">
-        <b-col lg="6" md="6" sm="8">
+        <b-col lg="6" md="8" sm="10">
           <b-card border-variant="dark" header="Cargar nueva producción">
             <b-container>
-              <b-row align-h="center">
+              <!-- Fecha -->
+              <b-row align-h="center" class="mt-3">
                 <b-col>
                   <datePicker v-model="pickedDate" />
                 </b-col>
+              </b-row>
+
+              <!-- Checkboxes -->
+              <b-row align-h="center" class="mt-3">
                 <b-col>
                   <b-form-checkbox
                     v-model="statusMuestra"
@@ -34,7 +39,9 @@
                   >Valor de lote fijo</b-form-checkbox>
                 </b-col>
               </b-row>
-              <b-row align-h="center">
+
+              <!-- Selección de ordeñe -->
+              <b-row align-h="center" class="mt-3">
                 <b-col>
                   <b-form-group label="Seleccionar ordeñe">
                     <b-form-radio-group
@@ -45,9 +52,14 @@
                   </b-form-group>
                 </b-col>
               </b-row>
-              <b-row align-h="end">
+
+              <!-- Cargar -->
+              <b-row align-h="end" class="mt-3">
                 <b-col col lg="3" md="3" sm="3">
-                  <b-button pill variant="outline-primary">Cargar</b-button>
+                  <b-button pill variant="outline-primary" v-b-modal.modal-infoProdCargada>Cargar</b-button>
+                  <b-modal id="modal-infoProdCargada" size="sm" title="Información" ok-only>
+                    <p>Producción cargada.</p>
+                  </b-modal>
                 </b-col>
               </b-row>
             </b-container>

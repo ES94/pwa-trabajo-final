@@ -10,13 +10,18 @@
 
       <!-- Contenido de la página -->
       <b-row align-h="center" align-v="center">
-        <b-col lg="6" md="6" sm="8">
+        <b-col lg="6" md="8" sm="10">
           <b-card border-variant="dark" header="Cargar nueva reproducción">
             <b-container>
-              <b-row align-h="center">
+              <!-- Fecha -->
+              <b-row align-h="center" class="mt-3">
                 <b-col>
                   <datePicker v-model="pickedDate" />
                 </b-col>
+              </b-row>
+
+              <!-- Evento -->
+              <b-row align-h="center" class="mt-3">
                 <b-col>
                   <b-dropdown right text="Elegir evento" variant="primary" class="m-2">
                     <b-dropdown-item>Evento 1</b-dropdown-item>
@@ -25,7 +30,9 @@
                   </b-dropdown>
                 </b-col>
               </b-row>
-              <b-row align-h="center">
+
+              <!-- RP -->
+              <b-row align-h="center" class="mt-3">
                 <b-col>
                   <b-button pill variant="outline-primary" v-b-modal.modal-agregarRp>Agregar RP</b-button>
 
@@ -50,8 +57,10 @@
                   <textoValor texto="RP" :valor="rpElegido" />
                 </b-col>
               </b-row>
-              <b-row align-h="center">
-                <b-col col lg="6" md="6" sm="10">
+
+              <!-- Participantes -->
+              <b-row align-h="center" class="mt-3">
+                <b-col>
                   <b-dropdown
                     id="dropdown-participantes"
                     :text="particElegido"
@@ -68,7 +77,11 @@
                     </b-dropdown-item-button>
                   </b-dropdown>
                 </b-col>
-                <b-col col lg="6" md="6" sm="10">
+              </b-row>
+
+              <!-- Tratamientos -->
+              <b-row align-h="center" class="mt-3">
+                <b-col>
                   <b-dropdown
                     id="dropdown-tratamientos"
                     :text="tratamElegido"
@@ -80,13 +93,15 @@
                       :key="tratam.id"
                       @click="elegirTratamiento(index)"
                     >
-                      <!-- hacer for en la lista de participantes de un archivo -->
+                      <!-- hacer for en la lista de tratamientos de un archivo -->
                       {{tratam.nombre}}
                     </b-dropdown-item-button>
                   </b-dropdown>
                 </b-col>
               </b-row>
-              <b-row align-h="center">
+
+              <!-- Comentarios -->
+              <b-row align-h="center" class="mt-3">
                 <b-col>
                   <b-form-textarea
                     v-model="dato"
@@ -97,9 +112,19 @@
                   />
                 </b-col>
               </b-row>
-              <b-row align-h="end">
+
+              <!-- Guardar -->
+              <b-row align-h="end" class="mt-3">
                 <b-col col lg="3" md="3" sm="3">
-                  <b-button pill variant="outline-primary" class="mt-3">Guardar</b-button>
+                  <b-button
+                    pill
+                    variant="outline-primary"
+                    class="mt-3"
+                    v-b-modal.modal-infoReprodGuardada
+                  >Guardar</b-button>
+                  <b-modal id="modal-infoReprodGuardada" size="sm" title="Información" ok-only>
+                    <p>Reproducción guardada.</p>
+                  </b-modal>
                 </b-col>
               </b-row>
             </b-container>
@@ -137,7 +162,7 @@ export default {
     ])
   },
   methods: {
-    ...mapMutations(["agregarRp", "elegirParticipante", "elegirTratamiento"])
+    ...mapMutations(["elegirRp", "elegirParticipante", "elegirTratamiento"])
   }
 };
 </script>

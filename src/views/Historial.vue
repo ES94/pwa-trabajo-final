@@ -10,10 +10,10 @@
 
       <!-- Contenido de la página -->
       <b-row>
-        <b-col col lg="4" md="4" sm="4">
+        <b-col col lg="4" md="4" sm="10">
           <cardEvLista />
         </b-col>
-        <b-col col lg="8" md="8" sm="8">
+        <b-col col lg="8" md="8" sm="10">
           <cardEvDet />
         </b-col>
       </b-row>

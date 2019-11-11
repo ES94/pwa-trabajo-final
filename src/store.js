@@ -50,6 +50,14 @@ export default new Vuex.Store({
       }
     ],
     eventoElegido: "Seleccionar evento",
+    tiposEventos: [
+      { descripcion: "Control lechero" },
+      { descripcion: "Volver a revisar" },
+      { descripcion: "Celo" },
+      { descripcion: "Servicio" },
+      { descripcion: "Vendida" }
+    ],
+    tipoEventoElegido: "Seleccionar evento",
     listaRp: [
       { rp: "10" },
       { rp: "20" },
@@ -114,7 +122,11 @@ export default new Vuex.Store({
       var evento = state.eventos[index];
       state.eventoElegido = evento;
     },
-    agregarRp(state, index) {
+    elegirTipoEvento(state, index) {
+      var tipoEvento = state.tiposEventos[index].descripcion;
+      state.tipoEventoElegido = tipoEvento;
+    },
+    elegirRp(state, index) {
       var rp = state.listaRp[index].rp;
       state.rpElegido = rp;
     },
