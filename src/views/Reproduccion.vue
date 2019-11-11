@@ -23,10 +23,12 @@
               <!-- Evento -->
               <b-row align-h="center" class="mt-3">
                 <b-col>
-                  <b-dropdown right text="Elegir evento" variant="primary" class="m-2">
-                    <b-dropdown-item>Evento 1</b-dropdown-item>
-                    <b-dropdown-item>Evento 2</b-dropdown-item>
-                    <b-dropdown-item>Evento 3</b-dropdown-item>
+                  <b-dropdown right :text="tipoEventoElegido" variant="primary" class="m-2">
+                    <b-dropdown-item
+                      v-for="(evento, index) of tiposEventos"
+                      :key="evento.id"
+                      @click="elegirTipoEvento(index)"
+                    >{{ evento.descripcion }}</b-dropdown-item>
                   </b-dropdown>
                 </b-col>
               </b-row>
@@ -105,7 +107,7 @@
                 <b-col>
                   <b-form-textarea
                     v-model="dato"
-                    placeholder="Escribir algo..."
+                    placeholder="Hacer un comentario..."
                     rows="3"
                     max-rows="6"
                     class="mt-3"
@@ -148,7 +150,8 @@ export default {
   },
   data() {
     return {
-      dato: ""
+      dato: "",
+      pickedDate: new Date()
     };
   },
   computed: {
@@ -158,11 +161,18 @@ export default {
       "participantes",
       "particElegido",
       "tratamientos",
-      "tratamElegido"
+      "tratamElegido",
+      "tiposEventos",
+      "tipoEventoElegido"
     ])
   },
   methods: {
-    ...mapMutations(["elegirRp", "elegirParticipante", "elegirTratamiento"])
+    ...mapMutations([
+      "elegirRp",
+      "elegirParticipante",
+      "elegirTratamiento",
+      "elegirTipoEvento"
+    ])
   }
 };
 </script>

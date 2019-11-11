@@ -24,7 +24,7 @@
             <b-nav-item to="/animales">Animales</b-nav-item>
             <b-nav-item to="/crias">Crías</b-nav-item>
             <b-nav-item to="/produccion">Producción</b-nav-item>
-            <b-nav-item to="/reproduccion">Reproduccion</b-nav-item>
+            <b-nav-item to="/reproduccion">Reproducción</b-nav-item>
             <b-nav-item to="/tacto">Tacto</b-nav-item>
             <b-nav-item to="/historial">Historial</b-nav-item>
             <b-nav-item to="/inconsistencias">Inconsistencias</b-nav-item>
