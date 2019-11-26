@@ -7,6 +7,7 @@
         <b-navbar-brand to="/">AgroProgressive</b-navbar-brand>
         <b-collapse is-nav id="nav-collapse">
           <b-navbar-nav>
+            <!-- Selector de tambos -->
             <b-dropdown id="dropdown-tambo" :text="tamboElegido" right>
               <b-dropdown-item-button
                 v-for="(tambo, index) of tambos"
@@ -14,12 +15,22 @@
                 @click="elegirTambo(index)"
               >
                 <!-- hacer for en la lista de tambos de un archivo -->
-                {{tambo.nombre}}
+                {{ tambo.nombre }}
               </b-dropdown-item-button>
               <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item-button>Añadir nuevo tambo</b-dropdown-item-button>
-              <b-dropdown-item-button>Editar tambos</b-dropdown-item-button>
+              <b-dropdown-item-button
+                v-b-modal.modal-editarTambo
+                @click="nuevoTambo()"
+                >Añadir nuevo tambo</b-dropdown-item-button
+              >
+              <b-dropdown-item-button
+                v-b-modal.modal-editarTambo
+                @click="editarTambo()"
+                >Editar tambos</b-dropdown-item-button
+              >
             </b-dropdown>
+
+            <!-- Menú de botones -->
             <b-nav-item to="/">Inicio</b-nav-item>
             <b-nav-item to="/animales">Animales</b-nav-item>
             <b-nav-item to="/crias">Crías</b-nav-item>
@@ -44,10 +55,10 @@ import { mapState, mapMutations } from "vuex";
 export default {
   name: "app",
   computed: {
-    ...mapState(["tambos", "tamboElegido"])
+    ...mapState(["tambos", "tamboElegido", "tipoEdicionElegido"])
   },
   methods: {
-    ...mapMutations(["elegirTambo"])
+    ...mapMutations(["elegirTambo", "nuevoTambo", "editarTambo"])
   }
 };
 </script>

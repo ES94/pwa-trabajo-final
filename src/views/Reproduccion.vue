@@ -23,12 +23,18 @@
               <!-- Evento -->
               <b-row align-h="center" class="mt-3">
                 <b-col>
-                  <b-dropdown right :text="tipoEventoElegido" variant="primary" class="m-2">
+                  <b-dropdown
+                    right
+                    :text="tipoEventoElegido"
+                    variant="primary"
+                    class="m-2"
+                  >
                     <b-dropdown-item
                       v-for="(evento, index) of tiposEventos"
                       :key="evento.id"
                       @click="elegirTipoEvento(index)"
-                    >{{ evento.descripcion }}</b-dropdown-item>
+                      >{{ evento.descripcion }}</b-dropdown-item
+                    >
                   </b-dropdown>
                 </b-col>
               </b-row>
@@ -36,16 +42,31 @@
               <!-- RP -->
               <b-row align-h="center" class="mt-3">
                 <b-col>
-                  <b-button pill variant="outline-primary" v-b-modal.modal-agregarRp>Agregar RP</b-button>
+                  <b-button
+                    pill
+                    variant="outline-primary"
+                    v-b-modal.modal-agregarRp
+                    >Agregar RP</b-button
+                  >
 
                   <!-- Cuadro modal de lista de RPs -->
                   <!-- Descubrir como capturar y devolver info dentro del modal
                   o sino hacer una lista de botones-->
-                  <b-modal id="modal-agregarRp" size="sm" scrollable title="Agregar RP" ok-only>
+                  <b-modal
+                    id="modal-agregarRp"
+                    size="sm"
+                    scrollable
+                    title="Agregar RP"
+                    ok-only
+                  >
                     <b-form-group label="Lista de RP">
                       <b-form-radio-group name="radio-group-rp">
                         <b-container>
-                          <b-row v-for="(rp, index) of listaRp" :key="rp.id" :value="index">
+                          <b-row
+                            v-for="(rp, index) of listaRp"
+                            :key="rp.id"
+                            :value="index"
+                          >
                             <b-col>
                               <b-form-radio>{{ rp.rp }}</b-form-radio>
                             </b-col>
@@ -75,7 +96,7 @@
                       @click="elegirParticipante(index)"
                     >
                       <!-- hacer for en la lista de participantes de un archivo -->
-                      {{part.nombre}}
+                      {{ part.nombre }}
                     </b-dropdown-item-button>
                   </b-dropdown>
                 </b-col>
@@ -96,7 +117,7 @@
                       @click="elegirTratamiento(index)"
                     >
                       <!-- hacer for en la lista de tratamientos de un archivo -->
-                      {{tratam.nombre}}
+                      {{ tratam.nombre }}
                     </b-dropdown-item-button>
                   </b-dropdown>
                 </b-col>
@@ -123,8 +144,14 @@
                     variant="outline-primary"
                     class="mt-3"
                     v-b-modal.modal-infoReprodGuardada
-                  >Guardar</b-button>
-                  <b-modal id="modal-infoReprodGuardada" size="sm" title="Información" ok-only>
+                    >Guardar</b-button
+                  >
+                  <b-modal
+                    id="modal-infoReprodGuardada"
+                    size="sm"
+                    title="Información"
+                    ok-only
+                  >
                     <p>Reproducción guardada.</p>
                   </b-modal>
                 </b-col>

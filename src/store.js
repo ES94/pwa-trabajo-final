@@ -110,7 +110,8 @@ export default new Vuex.Store({
       { nombre: "Tratamiento 2" },
       { nombre: "Tratamiento 3" }
     ],
-    tratamElegido: "Seleccionar tratamiento"
+    tratamElegido: "Seleccionar tratamiento",
+    tipoEdicionElegido: ""
   },
   mutations: {
     elegirTambo(state, index) {
@@ -137,6 +138,12 @@ export default new Vuex.Store({
     elegirTratamiento(state, index) {
       var tratam = state.tratamientos[index].nombre;
       state.tratamElegido = tratam;
+    },
+    nuevoTambo(state) {
+      state.tipoEdicionElegido = "Creación"
+    },
+    editarTambo(state) {
+      state.tipoEdicionElegido = "Edición"
     }
   },
   actions: {}
