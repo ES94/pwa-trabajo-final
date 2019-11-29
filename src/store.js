@@ -140,10 +140,10 @@ export default new Vuex.Store({
       state.tratamElegido = tratam;
     },
     nuevoTambo(state) {
-      state.tipoEdicionElegido = "Creación"
+      state.tipoEdicionElegido = "Creación de tambo"
     },
     editarTambo(state) {
-      state.tipoEdicionElegido = "Edición"
+      state.tipoEdicionElegido = "Edición de tambo"
     }
   },
   actions: {}
