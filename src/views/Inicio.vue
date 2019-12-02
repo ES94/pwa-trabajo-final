@@ -25,6 +25,11 @@
                   Elegir tambo</b-button
                 >
               </b-list-group-item>
+              <b-list-group-item>
+                <b-button pill variant="primary" @click="probarNotif()">
+                  Demo notificación</b-button
+                >
+              </b-list-group-item>
             </b-list-group>
           </b-card>
         </b-col>
@@ -49,7 +54,18 @@ export default {
     ...mapState(["tambos", "tamboElegido", "tipoEdicionElegido"])
   },
   methods: {
-    ...mapMutations(["elegirTambo", "nuevoTambo", "editarTambo"])
+    ...mapMutations(["elegirTambo", "nuevoTambo", "editarTambo"]),
+    probarNotif() {
+      /* Opciones de notificación */
+      let opt = {
+        type: "success",
+        icon: "mdi-check",
+        position: "bottom-right"
+      };
+
+      /* Lanza una notificación que dura dos segundos */
+      this.$toasted.show("prueba notificación", opt).goAway(2000);
+    }
   }
 };
 </script>

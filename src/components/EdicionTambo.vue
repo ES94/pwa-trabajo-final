@@ -31,7 +31,7 @@
               </b-button>
             </b-col>
             <b-col col align-self="end" lg="5" md="4" sm="4">
-              <b-button pill type="submit" variant="outline-primary">
+              <b-button pill type="submit" variant="outline-primary" @click="notify-me">
                 Guardar cambios
               </b-button>
             </b-col>
