@@ -83,7 +83,7 @@
         <b-col>
           <b-tabs fill class="mt-3">
             <!-- Información de animal -->
-            <b-tab title="Animal" active>
+            <b-tab title="Información" active>
               <b-container>
                 <b-row>
                   <!-- Realizar bindeo de datos con la cardInfo y la cardEstado para mostrar datos -->

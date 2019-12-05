@@ -19,14 +19,18 @@
                 <b-button
                   pill
                   variant="primary"
-                  v-b-modal.modal-editarTambo
+                  v-b-modal.modal-selecTambo
                   @click="editarTambo()"
                 >
                   Elegir tambo</b-button
                 >
               </b-list-group-item>
               <b-list-group-item>
-                <b-button pill variant="primary" @click="probarNotif()">
+                <b-button
+                  pill
+                  variant="primary"
+                  @click="probarNotif()"
+                >
                   Demo notificación</b-button
                 >
               </b-list-group-item>
@@ -38,29 +42,41 @@
 
     <!-- Cuadro modal de edición de tambo -->
     <edicionTambo :tipoEdicion="tipoEdicionElegido" />
+
+    <!-- Cuadro modal de selección de tambo -->
+    <selecTambo />
   </div>
 </template>
 
 <script>
 import { mapState, mapMutations } from "vuex";
 import edicionTambo from "@/components/EdicionTambo.vue";
+import selecTambo from "@/components/SeleccionTambo.vue";
 
 export default {
   name: "inicio",
   components: {
-    edicionTambo
+    edicionTambo,
+    selecTambo
   },
   computed: {
     ...mapState(["tambos", "tamboElegido", "tipoEdicionElegido"])
   },
   methods: {
-    ...mapMutations(["elegirTambo", "nuevoTambo", "editarTambo"]),
+    ...mapMutations([
+      "elegirTambo",
+      "nuevoTambo",
+      "editarTambo"
+    ]),
     probarNotif() {
       /* Opciones de notificación */
       let opt = {
         type: "success",
         icon: "mdi-check",
-        position: "bottom-right"
+        position: "bottom-right",
+        theme: "bubble",
+        closeOnSwipe: true,
+        singleton: true
       };
 
       /* Lanza una notificación que dura dos segundos */
